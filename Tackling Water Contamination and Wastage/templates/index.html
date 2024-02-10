@@ -1,0 +1,77 @@
+<!-- home.html -->
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+<body>
+
+    {% block content %}
+    <!-- <link rel="stylesheet" href="{{ url_for('static',filename='js/index.js')}}"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <h2>&ensp;Step 1:- Issue
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        Step 2:- Report
+        &nbsp;&nbsp;&nbsp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        Step 3:- Clean</h2>
+    <div class="image-slider">
+        <div><img src="{{ url_for('static', filename='assets/yam.jpg') }}" alt="Image 1"></div>
+        <div><img src="{{ url_for('static', filename='assets/yam2.jpg') }}" alt="Image 2"></div>
+        <div><img src="{{ url_for('static', filename='assets/image-asset.jpeg')}}" alt="Image 3"></div>
+    </div>
+
+    <br>
+    <br>
+    <!-- <h1>Report Form</h1> -->
+    <div class="container">
+        <h1>Report An Issue</h1>
+        <form action="{{url_for('registration')}}" method="post" enctype="multipart/form-data">
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+    
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" cols="50"
+                placeholder="Describe the Issue"></textarea>
+    
+            <label for="severity">Severity:</label>
+            <select id="severity" name="severity">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <br>
+            <p></p>
+            <label for="location">Current Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter your current location">
+            <button type="button" onclick="getCurrentLocation()">Get Current Location</button>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+    <br>
+    <h2>&emsp; &emsp; &emsp; &emsp; Ongoing Issues in India</h2>
+    <br>
+    <div id="map-container">
+        <div id="map"></div>
+    </div>
+
+    <div class="container">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Enter your email address below to subscribe:</p>
+        <p>To get weekly quizes, articles and other interesting content</p>
+        <form action="#" method="post">
+            <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+            <br>
+            <input type="submit" value="Subscribe">
+        </form>
+    </div>
+
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+
+<br>
+<br>
+    {% endblock %}
+
+</body>

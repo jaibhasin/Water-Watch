@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+<body>
+    {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/active_issues.css') }}">
+    <h1>Active Issues</h1>
+    <br>
+    <table border="1">
+        <thead>
+            <tr style="font-size: larger;">
+                <th>Description</th>
+                <th>Image</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr onclick="window.location='{{ default_url }}'">
+                <td>Description 1</td>
+                <td>Image 1</td>
+                <td>Location 1</td>
+           </tr>
+     
+
+           <tr onclick="window.location='{{ default_url }}'">
+                <td>Description 2</td>
+                <td>Image 2</td>
+                <td>Location 2</td>
+            </tr>
+            <tr onclick="window.location='{{ default_url }}'">
+                <td>Description 3</td>
+                <td>Image 3</td>
+                <td>Location 3</td>
+            </tr>
+        </tbody>
+    </table>
+<br>
+<br>
+<br>
+<br>
+
+    <div class="comments-container">
+        <h2>Comments</h2>
+        <div class="comment">
+            <p class="username">John</p>
+            <p class="comment-text">There is a comment section for each issue when we click on it</p>
+            <p>Encourage community engagement by allowing users to comment on reported issues, discuss potential solutions, and collaborate on cleanup efforts.</p>
+        </div>
+        <!-- More comments can be added here -->
+    </div>
+
+    <div class="add-comment">
+        <h3>Add a Comment</h3>
+        <form id="comment-form">
+            <input type="text" id="username" placeholder="Your Name" required>
+            <textarea id="comment" placeholder="Your Comment" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="active_issues.js"></script>
+    {% endblock %}
+</body>

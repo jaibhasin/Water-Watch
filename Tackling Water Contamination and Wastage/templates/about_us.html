@@ -1,0 +1,17 @@
+<!-- about us.html -->
+{% extends "base.html" %}
+
+
+{% block content %}
+<!-- <h1>About Us</h1> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about_us.css')}}">
+
+<div class="about-section">
+    <div class="container">
+        <h1 class="about-heading">About Water Watch</h1>
+        <p class="about-content">Water Watch is a platform dedicated to empowering communities to report water-related issues such as leaking taps in parks, pollution in rivers, and other environmental concerns. Our goal is to facilitate the communication between citizens and local authorities to address these issues effectively.</p>
+        <p class="about-content">With Water Watch, individuals can easily report problems by uploading pictures, providing descriptions, and pinpointing the location on the map. Once submitted, the platform notifies the relevant authorities, such as local governments or municipal corporations, enabling prompt action to tackle the problem.</p>
+        <p class="about-content">Together, we can make a difference in preserving our precious water resources and creating a healthier environment for everyone.</p>
+    </div>
+</div>
+{% endblock %}
