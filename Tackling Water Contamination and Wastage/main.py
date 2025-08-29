@@ -30,12 +30,12 @@ def registration():
     
     return render_template('registration.html')
 
-@app.route('/submit-registration', methods=['POST'])
+@app.route('/submit-registration', methods=['GET', 'POST'])
 def submit_registration():
     # Redirect to registration route to handle the form
     return redirect(url_for('registration'))
 
-@app.route('/report-issue', methods=['POST'])
+@app.route('/report-issue', methods=['GET', 'POST'])
 def report_issue():
     if request.method == 'POST':
         # Handle issue reporting
