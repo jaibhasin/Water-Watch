@@ -20,7 +20,7 @@
     /* Maintain aspect ratio */
 }
 
-.container {
+.report-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
@@ -84,7 +84,7 @@ body {
     padding: 0;
 }
 
-.container {
+.newsletter-container {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
